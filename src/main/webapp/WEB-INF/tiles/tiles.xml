@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base-template" template="/WEB-INF/tiles/layouts/base_template.jsp">
+    	<put-attribute name="title" value="식당 데모 " />
+        <put-attribute name="header" value="/WEB-INF/tiles/components/header.jsp" />
+        <put-attribute name="navigation" value="/WEB-INF/tiles/components/navigation.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/tiles/components/footer.jsp" />
+    </definition>
+    <definition name="/*" extends="base-template">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    <definition name="/*/*" extends="base-template">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    </tiles-definitions>
