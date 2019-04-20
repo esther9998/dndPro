@@ -48,7 +48,7 @@ textarea.form-control {
   right: 0;
   z-index: 101;
   position: fixed;
-  width: 300px;
+  width: 250px;
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
@@ -123,6 +123,7 @@ textarea.form-control {
 .site-logo-wrap {
   position: relative;
   z-index: 1021;
+	margin-left: 5%;
 }
 
 /* Site Header */
@@ -1042,7 +1043,46 @@ textarea.form-control {
   position: relative;
   z-index: 1000;
 }
-
+@media all and (min-width: 600px){
+		.screen-nav{
+			position:relative;
+			z-index: 109;
+		}
+		.screen-nav-inner{
+	    list-style: none;
+   		 font-size: 18px;
+   		 margin-right: 5%;
+		}
+	   .screen-nav ul li {
+		float:left;
+		}
+		.screen-nav ul li a{
+		color: black;	
+		padding: 0px 30px;
+		}
+		.screen-nav ul li a:hover{
+		 color: grey;
+		 text-decoration: none;
+		 
+		}
+	}
+@media all and (max-width: 600px){
+	.screen-nav{
+		display: none;
+	}
+.site-logo-wrap {
+    z-index: 121;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.navToggle{
+	position: absolute;
+	right: 20px;
+    top: 50px;
+}
 .site-nav-toggle {
   width: 30px;
   height: 30px;
@@ -1128,6 +1168,7 @@ textarea.form-control {
 
 .site-nav-toggle i:after {
   bottom: -7px;
+}
 }
 
 .section {

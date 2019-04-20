@@ -11,10 +11,10 @@
 	<%--  <tiles:insertAttribute name="header"/>  --%>
 	
 	<div class="main-wrap " >
-	<tiles:insertAttribute name="navigation"/> 
+		<tiles:insertAttribute name="navigation"/> 
 		<tiles:insertAttribute name="content" />
 	</div>
-	<tiles:insertAttribute name="footer" />
+		<tiles:insertAttribute name="footer" />
 
 		<!-- loader -->
 		<div id="loader" class="show fullscreen">

@@ -112,7 +112,7 @@ AOS.init({
 
       $('body').removeClass('menu-open');
     } else {
-
+    	
       // $('.site-menu').fadeIn(400);
       $('.site-menu').addClass('site-menu-show');
 

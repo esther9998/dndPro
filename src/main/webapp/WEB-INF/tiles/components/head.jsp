@@ -28,5 +28,6 @@
 <!-- Theme Style -->
 <link rel="stylesheet" href="/resources/css/morock.css">
 <link rel="stylesheet" href="/resources/css/navbar.css">
+<link rel="stylesheet" href="/resources/css/gallery.css">
 	
 </head>
