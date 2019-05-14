@@ -123,7 +123,6 @@ textarea.form-control {
 .site-logo-wrap {
   position: relative;
   z-index: 1021;
-	margin-left: 5%;
 }
 
 /* Site Header */
@@ -297,7 +296,8 @@ textarea.form-control {
 }
 
 .section-heading h2 {
-  font-size: 50px;
+ font-size: 35px;
+    margin-top: 20px;
 }
 
 @media (max-width: 991.98px) {
@@ -574,7 +574,7 @@ textarea.form-control {
 .site-tab-nav li a {
   background: none;
   color: gray;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: .2em;
   border-bottom: 2px solid transparent;
@@ -1070,13 +1070,22 @@ textarea.form-control {
 	.screen-nav{
 		display: none;
 	}
+.mobile-logo{
+	  position: absolute;
+    top: 30px;
+    left: 30px;
+    color:black;
+    font-size: 24px;
+}
+
 .site-logo-wrap {
-    z-index: 121;
+    display: none;
+    /* z-index: 121;
     margin: auto;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
 }
 .navToggle{
 	position: absolute;
@@ -1172,7 +1181,7 @@ textarea.form-control {
 }
 
 .section {
-  padding: 7em 0;
+  /* padding: 7em 0; */
   z-index: 2;
   position: relative;
 }

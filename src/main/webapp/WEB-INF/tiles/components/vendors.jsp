@@ -21,6 +21,7 @@
 
 		<script src="/resources/js/main.js"></script>
 		<script src="/resources/js/nivo-lightbox.js"></script>
+		<script src="/resources/js/slideImg.js"></script>
 		<script>
 		function main() {
 

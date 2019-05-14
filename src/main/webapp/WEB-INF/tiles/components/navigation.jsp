@@ -9,10 +9,11 @@
       <div class="col-10 col-md-10 screen-nav">
       	  <ul class="screen-nav-inner">
            			<li><a href="/">Home</a></li>
-					<li><a href="/gallery">갤러리</a></li> 
-					<li><a href="/menu">메뉴</a></li>
-					<li><a href="/reserve">예약</a></li>
-					<li><a href="/contact">오시는길</a></li>
+           			<li><a href="/about">About</a></li> 
+					<!-- <li><a href="/gallery">Gallery</a></li>  -->
+					<li><a href="/menu">Menu</a></li>
+					<li><a href="/reserve">Reservation</a></li>
+					<li><a href="/contact">Contacts</a></li>
           </ul>
       </div>
              <div class="text-right navToggle">
@@ -26,12 +27,16 @@
 	<!-- mobile nav  -->
 	<nav class="site-menu" id="ftco-navbar-spy">
         <div class="site-menu-inner" id="ftco-navbar">
+        <div class="mobile-logo">
+            <a href="/" class="site-logo" style="color: black  !important">Morock</a>
+         </div>
           <ul class="list-unstyled">
            			<li><a href="/">Home</a></li>
-					<li><a href="/gallery">갤러리</a></li> 
-					<li><a href="/menu">메뉴</a></li>
-					<li><a href="/reserve">예약</a></li>
-					<li><a href="/contact">오시는길</a></li>
+					<li><a href="/about">About</a></li> 
+					<!-- <li><a href="/gallery">Gallery</a></li> --> 
+					<li><a href="/menu">Menu</a></li>
+					<li><a href="/reserve">Reservation</a></li>
+					<li><a href="/contact">Contacts</a></li>
           </ul>
         </div>
       </nav>

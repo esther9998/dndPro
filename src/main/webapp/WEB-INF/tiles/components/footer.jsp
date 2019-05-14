@@ -6,15 +6,11 @@
 					<div class="row">
 						<div class="col-md-4 mb-5">
 							<div class="footer-widget">
-								<h3 class="mb-4">About Meal</h3>
-								<p>The Big Oxmox advised her not to do so, because there
-									were thousands of bad Commas, wild Question Marks and devious
-									Semikoli, but the Little Blind Text didnât listen.</p>
+								<h3 class="mb-4">Contacts Morock</h3>
+								<p>+82 2 - 222 - 2222 (11:00 - 10:00 )</p>
+								<p>Seoul, Republic  Of Korea</p>
+								<p> BREAK OF DAY - Every Monday </p>
 								<!-- <input type="submit" class="btn btn-primary btn-outline-primary" value="Send Message"> -->
-								<p>
-									<a href="https://free-template.co" target="_blank"
-										class="btn btn-primary btn-outline-primary">More Templates</a>
-								</p>
 							</div>
 						</div>
 						<div class="col-md-4 mb-5">
@@ -22,9 +18,7 @@
 								<h3 class="mb-4">Lunch Service</h3>
 								<p>Booking from 12:00pm &mdash; 1:30pm</p>
 								<h3 class="mb-4">Dinner Service</h3>
-								<p>
-									Everyday: <br> Booking from 6:00pm &mdash; 9:00pm
-								</p>
+								<p>Everyday: <br> Booking from 6:00pm &mdash; 9:00pm</p>
 							</div>
 						</div>
 
@@ -38,7 +32,7 @@
 									<li><a href="#"><span class="fa fa-instagram"></span></a></li>
 								</ul>
 							</div>
-							<div class="footer-widget">
+							<!-- <div class="footer-widget">
 								<h3 class="mb-4">Newsletter</h3>
 								<form action="#" class="ftco-footer-newsletter">
 									<div class="form-group">
@@ -49,16 +43,14 @@
 											placeholder="Enter Email">
 									</div>
 								</form>
-							</div>
+							</div> -->
 						</div>
-
 					</div>
 
 					<div class="row pt-5">
 						<div class="col-md-12 text-center">
 							<p>
-								&copy; Copyright 2018. All Rights Reserved. Designed &amp;
-								Developed by <a href="https://free-template.co/">Free-Template.co</a>
+								&copy; Copyright 2018. All Rights Reserved. 
 							</p>
 						</div>
 					</div>

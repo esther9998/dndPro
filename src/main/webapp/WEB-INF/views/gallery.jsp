@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<div id="portfolio">
+<!-- <div id="portfolio"> -->
+<div class="site-wrap">
+    	<div class="main-wrap " id="section-home">
+			<div class="section bg-light" id="section-menu" data-aos="fade-up">
   <div class="container">
-    <div class="section-title text-center center">
-      <h2>Portfolio</h2>
+  <div class="row section-heading justify-content-center">
+    <div class="col-md-8  text-center center">
+      <h2>Gallery</h2>
       <hr>
     </div>
-    <div class="categories">
+    </div>
+    <div class="gallery-category">
       <ul class="cat">
         <li>
           <ol class="type">
@@ -123,7 +128,7 @@
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="images/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
               <div class="hover-text">
-                <h4>Project Title</h4>
+                	<h4>Project Title</h4>
               </div>
               <img src="images/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
@@ -131,6 +136,6 @@
       </div>
     </div>`
   </div>
-</div>
+</div></div></div>
 
 

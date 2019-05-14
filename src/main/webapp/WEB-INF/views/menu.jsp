@@ -4,16 +4,16 @@
 <body data-spy="scroll" data-target="#ftco-navbar-spy" data-offset="0">
 
 <div class="site-wrap">
-    	
     	<div class="main-wrap " id="section-home">
 			<div class="section bg-light" id="section-menu" data-aos="fade-up">
 				<div class="container">
 					<div class="row section-heading justify-content-center mb-5">
 						<div class="col-md-8 text-center">
 							<h2 class="heading mb-3">Menu</h2>
-							<p class="sub-heading mb-5">
+							<hr>
+							<!-- <p class="sub-heading mb-5">
 								Free Website Template For Restaurants Made by <a href="#">Free-Template.co</a>
-							</p>
+							</p> -->
 						</div>
 					</div>
 					<div class="row justify-content-center">

@@ -4,7 +4,7 @@
 	padding: 120px 0;
 	background: #f6f6f6;
 }
-.categories {
+.gallery-category {
 	padding-bottom: 30px;
 	text-align: center;
 }
@@ -127,3 +127,7 @@ ol.type li a:hover {
 	padding: 5px;
 	color: #E87E04;
 }
+}
+@media all and (min-width: 600px){
+	}
+	

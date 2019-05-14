@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" href="/resources/css/bootstrap.css">
 <link rel="stylesheet" href="/resources/css/animate.css">
+<link rel="stylesheet" href="/resources/css/slideImg-animate.css"> 
 <link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
 
 <link rel="stylesheet" href="/resources/css/magnific-popup.css">
@@ -22,6 +23,7 @@
 
 <link rel="stylesheet"href="/resources/fonts/ionicons/css/ionicons.min.css">
 <link rel="stylesheet"href="/resources/fonts/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet"href="/resources/fonts/icomoon/css/icomoon.css">
 
 <link rel="stylesheet"href="/resources/fonts/flaticon/font/flaticon.css">
 
@@ -30,4 +32,7 @@
 <link rel="stylesheet" href="/resources/css/navbar.css">
 <link rel="stylesheet" href="/resources/css/gallery.css">
 	
+<link rel="stylesheet" href="/resources/css/contact.css">
+<link rel="stylesheet" href="/resources/css/slideImg.css">
+<link rel="stylesheet" href="/resources/css/schedule-day.css">
 </head>
