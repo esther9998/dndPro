@@ -1,27 +1,34 @@
 package com.esther.dnd;
-import java.sql.DriverManager;
-
-import org.junit.Test;
-
+ 
 import java.sql.Connection;
-
-public class mariadbTest{
-
-	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://183.111.199.157:3306/reservation01";
-	//jdbc:mysql:주소:포트/DB명
-	private static final String USER = "dndex";
-	private static final String PW = "sther84!";
-	//Root 비밀번호
-	
-	@Test
-	public void testConnection() throws Exception{
-		Class.forName(DRIVER);
-		try(Connection con = DriverManager.getConnection(URL, USER, PW)){
-			System.out.println(con);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
+ 
+import javax.inject.Inject;
+import javax.sql.DataSource;
+ 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+ 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/**/root-context.xml" })
+public class MariadbTest {
+    
+    @Inject
+    private DataSource ds;
+ 
+    @Test
+    public void testConnection() throws Exception {
+ 
+        try (Connection con = ds.getConnection()) {
+ 
+            System.out.println("\n >>>>>>>>>> Connection 출력 : " + con + "\n");
+ 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
 }
+
+
