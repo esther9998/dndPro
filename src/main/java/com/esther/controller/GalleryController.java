@@ -1,4 +1,4 @@
-package com.esther.dnd;
+package com.esther.controller;
 
 import java.util.Locale;
 
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class MenuController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+public class GalleryController {
+	private static final Logger logger = LoggerFactory.getLogger(GalleryController.class);
 	
-	@RequestMapping(value = "/menu", method = RequestMethod.GET)
-	public ModelAndView menu(Locale locale, Model model) {
-		logger.info("메뉴 페이지 >>>>>>>>>>>>>>>>>>>" );
+	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
+	public ModelAndView gallery(Locale locale, Model model) {
+		logger.info("오시는길 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/menu");
+		mav.setViewName("/gallery");
 		
 		return mav;
 	}
