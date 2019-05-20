@@ -93,6 +93,12 @@ $light_grey:#A39D9E;
 .dot_active{
   background-color: #FF8494;
 }
+.dot_cancel{
+  background-color: #ddd;
+}
+.dot_attend{
+  background-color: #72fa78;
+}
 
 .ei_Title{
   margin-left:10px;

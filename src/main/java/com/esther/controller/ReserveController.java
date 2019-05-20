@@ -18,8 +18,6 @@ import com.esther.service.ReservationService;
 
 @Controller
 public class ReserveController {
-	@Inject
-    private ReservationService service;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -28,17 +26,6 @@ public class ReserveController {
 		logger.info("갤러리 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/reserve");
-		
-		List<ReservationVO> reserv = null;
-		try {
-			reserv = service.selectAll();
-			System.out.println(reserv + "/////////////////됏지?");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        model.addAttribute("memberList", reserv);
  
 		return mav;
 	}
