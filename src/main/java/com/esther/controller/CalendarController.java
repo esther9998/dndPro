@@ -25,15 +25,8 @@ public class CalendarController {
 	public ModelAndView reserve(Locale locale, Model model) {
 		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/calendar");
+		mav.setViewName("/admin/calendar");
 		
-		return mav;
-	}
-	@RequestMapping(value = "/calendar/daily", method = RequestMethod.GET)
-	public ModelAndView scheduleDay(Locale locale, Model model) {
-		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/daily");
 		List<ReservationVO> reserv = null;
 		try {
 			reserv = service.selectAll();
@@ -45,6 +38,14 @@ public class CalendarController {
         
         model.addAttribute("reserv", reserv);
 		
+		return mav;
+	}
+	@RequestMapping(value = "/calendar/daily", method = RequestMethod.GET)
+	public ModelAndView scheduleDay(Locale locale, Model model) {
+		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/daily");
+	
 		return mav;
 	}
 }

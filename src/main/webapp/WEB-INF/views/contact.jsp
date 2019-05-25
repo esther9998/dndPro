@@ -3,7 +3,7 @@
 <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-			<div class="section" data-aos="fade-up" id="section-contact">
+			<div class="section bg-light" data-aos="fade-up" id="section-contact">
 				<div class="container">
 					<div class="row section-heading justify-content-center">
 						<div class="col-md-8 text-center">
@@ -11,7 +11,7 @@
 						</div>
 					</div>
 					<div class="row justify-content-center">
-						<div class="col-md-10 p-5 form-wrap">
+						<div class="col-md-12 p-5 form-wrap">
 						<div class=" animate-box">
 					<div class="col-md-5 col-md-push-1 animate-box">
 							<div class="fh5co-contact-info">
@@ -23,7 +23,7 @@
 								</ul>
 							</div>
 				</div>
-				<div class="col-md-7 animate-box">
+				<div class="col-md-5 animate-box">
    					 <div onload="initialize()">
  						<div id="map_canvas"style=" height:300px;">
 				</div>					

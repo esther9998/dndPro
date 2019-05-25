@@ -4,13 +4,18 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.esther.model.ReservationVO;
@@ -29,4 +34,14 @@ public class ReserveController {
  
 		return mav;
 	}
+	
+	@RequestMapping(value = "/reservedInfo", method = RequestMethod.POST)
+	@ResponseBody
+	public ReservationVO   reservedInfo(@RequestBody String formList,HttpServletRequest httpRequest){
+		logger.info("ajax 예약 reservedInfo>>>>>>>>>>>>>>>>>>>" );
+			System.out.println("컨트롤에서 출력"+formList);
+			
+			return new ReservationVO();
+	}
+	
 }

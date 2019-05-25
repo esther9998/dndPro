@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset-UTF-8"
 	pageEncoding="UTF-8"%>
 	
-	
-	
-			<div class="cover_1 overlay bg-slant-white bg-light">
+			<div class="cover_1 overlay bg-slant-white ">
 				<div class="img_bg" style="background-image: url(resources/images/slider-1.jpg);" data-stellar-background-ratio="0.5">
 					<div class="container">
 						<div

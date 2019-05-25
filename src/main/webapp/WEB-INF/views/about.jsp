@@ -26,8 +26,9 @@
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-6 ftco-animate img" data-animate-effect="fadeInRight">
-            <img src="images/about_img_1.jpg" alt="Free Template by Free-Template.co">
+            	<img src="images/about_img_1.jpg" alt="Free Template by Free-Template.co" style="width: 500px;">
           </div>
+          
         </div>
       </div>
     </section>

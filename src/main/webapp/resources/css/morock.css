@@ -25,6 +25,7 @@ textarea.form-control {
 }
 
 .form-field-icon-wrap .icon {
+ color: gray;
   position: absolute;
   top: 50%;
   right: 20px;
@@ -1242,7 +1243,7 @@ textarea.form-control {
 
 .form-wrap {
   padding: 40px;
-  background: #fff;
+  margin-bottom:50px;
   -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
 }
