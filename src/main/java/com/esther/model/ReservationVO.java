@@ -8,6 +8,7 @@ public class ReservationVO {
 	String reserv_name;
 	String reserv_phone;
 	String reserv_email;
+	int reserv_persons;
 	Date reserv_date;
 	Time reserv_time;
 	Date reserv_register;
@@ -25,6 +26,12 @@ public class ReservationVO {
 	public void setReserv_phone(String reserv_phone) {
 		this.reserv_phone = reserv_phone;
 	}
+	public int getReserv_persons() {
+		return reserv_persons;
+	}
+	public void setReserv_persons(int reserv_persons) {
+		this.reserv_persons = reserv_persons;
+	}
 	public String getReserv_email() {
 		return reserv_email;
 	}
@@ -34,8 +41,8 @@ public class ReservationVO {
 	public Date getReserv_date() {
 		return reserv_date;
 	}
-	public void setReserv_date(Date reserv_date) {
-		this.reserv_date = reserv_date;
+	public Date setReserv_date(Date reserv_date) {
+		return this.reserv_date = reserv_date;
 	}
 	public Time getReserv_time() {
 		return reserv_time;
@@ -56,11 +63,6 @@ public class ReservationVO {
 		this.reserv_status = reserv_status;
 	}
 	
-	@Override
-	public String toString() {
-		return "Reservation [reserv_name=" + reserv_name + ", reserv_phone=" + reserv_phone + ", reserv_email="
-				+ reserv_email + ", reserv_date=" + reserv_date + ", reserv_time=" + reserv_time + ", reserv_register="
-				+ reserv_register + ", reserv_status=" + reserv_status + "]";
-	}
+
 	
 }

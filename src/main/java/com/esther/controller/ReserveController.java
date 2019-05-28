@@ -1,7 +1,12 @@
 package com.esther.controller;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -37,11 +42,40 @@ public class ReserveController {
 	
 	@RequestMapping(value = "/reservedInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public ReservationVO   reservedInfo(@RequestBody String formList,HttpServletRequest httpRequest){
+	public ReservationVO   reservedInfo(@RequestBody Map formData,HttpServletRequest httpRequest){
 		logger.info("ajax 예약 reservedInfo>>>>>>>>>>>>>>>>>>>" );
-			System.out.println("컨트롤에서 출력"+formList);
+			System.out.println("컨트롤에서 출력"+formData);
+			ReservationVO vo = new ReservationVO();
+			
+			vo.setReserv_name((String)formData.get("name"));
+			vo.setReserv_phone((String)formData.get("phone"));
+			vo.setReserv_email((String)formData.get("email"));
+			vo.setReserv_persons(Integer.valueOf((String) formData.get("persons")));
+			
+			
+		/*
+		 * SimpleDateFormat sdf = new sim
+		 * 
+		 * Date date=Date.valueOf(); Date dd = vo.setReserv_date(date);
+		 * System.out.println(dd);
+		 */
+		/*
+		 * DateFormat df = new SimpleDateFormat("MM-dd-yyyy"); String temp
+		 * =(String)formData.get("date"); String fm = df.format(temp); Date date =
+		 * Date.valueOf(fm);
+		 */
+
+
+			
+			//formData.get("time");
+			
+			System.out.println("vo: "+vo.toString());
 			
 			return new ReservationVO();
 	}
+	
+	
+
+
 	
 }

@@ -3,10 +3,9 @@
     	<script src="/resources/js/jquery-3.2.1.min.js"></script>
 <div class="section bg-light" data-aos="fade-up" id="section-reservation">
           <div class="container">
-            <div class="row section-heading justify-content-center mb-5">
+            <div class="row section-heading justify-content-center">
               <div class="col-md-8 text-center">
                 <h2 class="heading mb-3">Reservation</h2>
-                <p class="sub-heading mb-5">Free Website Template For Restaurants Made by <a href="#">Free-Template.co</a></p>  
               </div>
             </div>
             <div class="row justify-content-center">
