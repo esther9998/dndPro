@@ -5,6 +5,13 @@ import java.sql.Time;
 
 public class ReservationVO {
 	
+	@Override
+	public String toString() {
+		return "ReservationVO [reserv_name=" + reserv_name + ", reserv_phone=" + reserv_phone + ", reserv_email="
+				+ reserv_email + ", reserv_persons=" + reserv_persons + ", reserv_date=" + reserv_date
+				+ ", reserv_time=" + reserv_time + ", reserv_register=" + reserv_register + ", reserv_status="
+				+ reserv_status + "]";
+	}
 	String reserv_name;
 	String reserv_phone;
 	String reserv_email;

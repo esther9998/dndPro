@@ -81,21 +81,20 @@
 			    if( $("#name").val().trim()== "" ){
 			     alert( "Please provide your name!" );
 			     $("#name").focus() ;
-			     return false;
+			     return null;
 			   }
 			    if( $("#email").val().trim()== "" ){
 				     alert( "Please provide your email!" );
 				     $("#email").focus() ;
-				     return false;
+				     return null;
 				   }
 			    if( $("#phone").val().trim()== "" || $("#phone").val().trim().length != 11 ){
 				     alert( "Please provide your contact numbers!" );
 				     $("#phone").focus() ;
-				     return false;
+				     return null;
 				   }else if(isNaN($("#phone").val())){
 				     alert( "Please provide only numbers" );
 				     $("#phone").focus() ;
-				     return false;
 				   }
 			  //오늘날짜 가져오기 
 			    	var today = new Date();
@@ -109,25 +108,28 @@
 			    	$("#date").val(month+"/"+day+"/"+year);
 			    	
 			    	$("#date").focus() ;
-				     return false;
+				     return null;
 				   }
 				//오늘기준 이전날짜 체크
 			    var dayCheckArr = $("#date").val().split("/");
 			    if(dayCheckArr[2]<year){
 						alert("The date is not validate.");
-				     return false;
+						$("#date").focus() ;
+				     return null;
 			    }else if(dayCheckArr[1]<day){
 						alert("The date is not validate.");
-				     return false;
+						$("#date").focus() ;
+				     return null;
 			    }else if(dayCheckArr[0]<month){
 						alert("The date is not validate.");
-				     return false;
+						$("#date").focus() ;
+				     return null;
 			    }
 					
 			    if( $("#time").val().trim()== "" ){
 			    	alert( "Please choose a time for reservation" );
 				     $("#time").focus() ;
-				     return false;
+				     return null;
 				   }
 			
 			   return( true );

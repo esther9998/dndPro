@@ -6,8 +6,7 @@ import java.text.SimpleDateFormat;
 
 public class DateFormating {
 
-	public static Date transformDate(String date)
-    {
+	public static Date transformDate(String date){
         SimpleDateFormat beforeFormat = new SimpleDateFormat("mm/dd/yyyy");
         
         // Date로 변경하기 위해서는 날짜 형식을 yyyy-mm-dd로 변경해야 한다.

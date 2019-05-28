@@ -41,6 +41,7 @@
 <context:component-scan base-package="com.esther.controller"></context:component-scan>
 <context:component-scan base-package="com.esther.model"></context:component-scan>
 <context:component-scan base-package="com.esther.service"></context:component-scan>
+<context:component-scan base-package="com.esther.util"></context:component-scan>
  
 
 </beans>

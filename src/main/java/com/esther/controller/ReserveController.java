@@ -1,5 +1,7 @@
 package com.esther.controller;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Locale;
 import java.util.Map;
 
@@ -16,15 +18,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.esther.dnd.DateFormating;
 import com.esther.model.ReservationVO;
+import com.esther.util.DateFormating;
+import com.esther.util.TimeFormating;
 
 @Controller
 public class ReserveController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	@Inject
-	DateFormating dateFormating;
 	
 	@RequestMapping(value = "/reserve", method = RequestMethod.GET)
 	public ModelAndView reserve(Locale locale, Model model) {
@@ -47,21 +48,16 @@ public class ReserveController {
 			vo.setReserv_phone((String)formData.get("phone"));
 			vo.setReserv_email((String)formData.get("email"));
 			vo.setReserv_persons(Integer.valueOf((String) formData.get("persons")));
-			dateFormating.transformDate((String)formData.get("date"));
-		
-		
-
-
-			
-			//formData.get("time");
-			
+			//데이트 형변환 
+			String strDate = (String) formData.get("date");
+			Date date = DateFormating.transformDate(strDate);
+			vo.setReserv_date(date);
+			//타임 형변
+			String strTime = (String) formData.get("time");
+			Time time = TimeFormating.transToTime(strTime);
+			vo.setReserv_time(time);
 			System.out.println("vo: "+vo.toString());
-			
 			return new ReservationVO();
 	}
-	
-	
-
-
 	
 }
