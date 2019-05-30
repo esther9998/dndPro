@@ -4,18 +4,11 @@
 
 <div class="container">
 
-<div class="calendar dark">
-    <div class="calendar_header">
-      <h1 class = "header_title">Welcome Back</h1>
-      <p class="header_copy"> Calendar Plan</p>
-    </div>
     <div class="calendar_plan">
       <div class="cl_plan">
         <div class="cl_title">Today</div>
         <div class="cl_copy">22nd  April  2018</div>
-        <div class="cl_add">
-          <i class="fas fa-plus"></i>
-        </div>
+        <div class="cl_add">+edit</div>
       </div>
     </div>
     <div class="calendar_events">
@@ -46,5 +39,4 @@
         <div class="ei_Copy">Add some more events to the calendar</div>
       </div>
     </div>
-  </div> 
   </div>

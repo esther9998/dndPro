@@ -18,5 +18,18 @@ public class reservationServiceImpl  implements ReservationService{
 		
 		return dao.selectAll();
 	}
+
+	@Override
+	public int insertReserv(ReservationVO vo) {
+		
+		try {
+			return  dao.insertReserv(vo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return 0;
+		}
+		
+	}
 	
 }

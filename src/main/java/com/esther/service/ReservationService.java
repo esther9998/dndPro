@@ -6,6 +6,8 @@ import com.esther.model.ReservationVO;
 public interface ReservationService {
 
 	    public List<ReservationVO> selectAll() throws Exception;
+
+		public int insertReserv(ReservationVO vo);
 	    
 	}
 

@@ -8,15 +8,16 @@
     <button  data-toggle="tab nav-item"><a href="#week">Week</a></button>
     <button  data-toggle="tab nav-item"><a href="#month">Month</a></button>
   </div> -->
+  <h2>Schedules</h2>
   <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#day">Today</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#week">Menu 1</a>
+    <a class="nav-link" data-toggle="tab" href="#week">Week</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#month">Menu 2</a>
+    <a class="nav-link" data-toggle="tab" href="#month">Month</a>
   </li>
 </ul>
 

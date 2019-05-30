@@ -3,4 +3,9 @@
  
 <configuration>
 
+<typeAliases>
+        <package name="com.esther.model"/>
+    </typeAliases>
+
+
 </configuration> 

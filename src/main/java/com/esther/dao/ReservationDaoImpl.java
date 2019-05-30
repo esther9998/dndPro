@@ -13,11 +13,18 @@ import com.esther.model.ReservationVO;
 public class ReservationDaoImpl implements ReservationDao{
 	@Autowired
 	private SqlSession sqlSession;
+	
 	private static final String Namespace = "reservationMapper";
 	@Override
 	public List<ReservationVO> selectAll() throws Exception {
 		System.out.println(sqlSession.selectList(Namespace+".selectAll"));
 		return sqlSession.selectList(Namespace+".selectAll");
+	}
+	@Override
+	public int insertReserv(ReservationVO vo) throws Exception {
+		System.out.println("dat : "+vo);
+		System.out.println(sqlSession.insert(Namespace+".insertReserv"));
+		return sqlSession.insert(Namespace+".insertReserv",  vo);
 	}
 	
 }

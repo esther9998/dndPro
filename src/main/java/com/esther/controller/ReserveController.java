@@ -2,6 +2,7 @@ package com.esther.controller;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -19,18 +20,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.esther.model.ReservationVO;
+import com.esther.service.ReservationService;
 import com.esther.util.DateFormating;
 import com.esther.util.TimeFormating;
 
 @Controller
 public class ReserveController {
-
+	@Inject
+    private ReservationService service;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@RequestMapping(value = "/reserve", method = RequestMethod.GET)
 	public ModelAndView reserve(Locale locale, Model model) {
 		logger.info("갤러리 페이지 >>>>>>>>>>>>>>>>>>>" );
-		System.out.println("머야야야야야");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/reserve");
  
@@ -57,6 +60,20 @@ public class ReserveController {
 			Time time = TimeFormating.transToTime(strTime);
 			vo.setReserv_time(time);
 			System.out.println("vo: "+vo.toString());
+			
+			
+			try {
+				int result = service.insertReserv(vo);
+				
+				System.out.println(result);
+			} catch (Exception e) {
+				System.out.println("왜난 돼"+vo.toString());
+			
+				e.printStackTrace();
+			}
+	        
+			
+			
 			return new ReservationVO();
 	}
 	
