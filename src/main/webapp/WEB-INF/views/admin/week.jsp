@@ -7,7 +7,7 @@
     <div class="calendar_plan">
       <div class="cl_plan">
         <div class="cl_title">Today</div>
-        <div class="cl_copy">22nd  April  2018</div>
+        <div class="cl_copy">${date}</div>
         <div class="cl_add">+edit</div>
       </div>
     </div>

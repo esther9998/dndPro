@@ -1,5 +1,12 @@
 package com.esther.controller;
 
+import java.sql.Date;
+import java.text.Format;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -36,16 +43,30 @@ public class CalendarController {
 			e.printStackTrace();
 		}
         
+		//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		LocalDate localDate = LocalDate.now();
+		//Calendar date = dtf.format(localDate);
+		//String[] dateArr =  date.split("/");
+
+		DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+		System.out.println(localDate); 
+		System.out.println(dayOfWeek); 
+		
+		
+		model.addAttribute("date", localDate);
         model.addAttribute("reserv", reserv);
 		
 		return mav;
 	}
-	@RequestMapping(value = "/calendar/daily", method = RequestMethod.GET)
-	public ModelAndView scheduleDay(Locale locale, Model model) {
-		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/daily");
+	/*
+	 * @RequestMapping(value = "/calendar/daily", method = RequestMethod.GET) public
+	 * ModelAndView scheduleDay(Locale locale, Model model) {
+	 * logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" ); ModelAndView mav = new
+	 * ModelAndView(); mav.setViewName("/daily");
+	 * 
+	 * return mav; }
+	 */
 	
-		return mav;
-	}
+	
+	
 }

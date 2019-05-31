@@ -23,7 +23,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	@Override
 	public int insertReserv(ReservationVO vo) throws Exception {
 		System.out.println("dat : "+vo);
-		System.out.println(sqlSession.insert(Namespace+".insertReserv"));
+		//System.out.println(sqlSession.insert(Namespace+".insertReserv"));
 		return sqlSession.insert(Namespace+".insertReserv",  vo);
 	}
 	

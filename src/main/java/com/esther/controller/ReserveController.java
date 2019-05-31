@@ -40,6 +40,7 @@ public class ReserveController {
 		return mav;
 	}
 	
+	//예약 등록
 	@RequestMapping(value = "/reservedInfo", method = RequestMethod.POST)
 	@ResponseBody
 	public ReservationVO   reservedInfo(@RequestBody Map formData,HttpServletRequest httpRequest){
@@ -64,15 +65,12 @@ public class ReserveController {
 			
 			try {
 				int result = service.insertReserv(vo);
-				
-				System.out.println(result);
+				System.out.println("결과가 1이면 성공= "+result);
 			} catch (Exception e) {
-				System.out.println("왜난 돼"+vo.toString());
-			
+				System.out.println("컨트롤러에서 에러"+vo.toString());
 				e.printStackTrace();
 			}
 	        
-			
 			
 			return new ReservationVO();
 	}
