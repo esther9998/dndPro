@@ -14,15 +14,12 @@
     
     <div class="calendar_events">
       <p class="ce_title">Upcoming Events</p>
-      ${reservation.reserv_date} //
+  ${reservation.reserv_date} //
       ${date} ..
-      ${reservation.reserv_date == date} 
-      <%
-      
-      %>
+      ${reservation.reserv_date == date}  
       
       <c:forEach var="reservation" items="${reserv}" varStatus="status">
-       <c:if test="${reservation.reserv_date == date}"> 
+     <%--   <c:if test="${reservation.reserv_date == date}">  --%>
 	      
 	      <div class="event_item">
 	      	<c:if test="${reservation.reserv_status==0}">
@@ -37,9 +34,9 @@
 	        <div class="ei_Title">${reservation.reserv_date} TIME : ${reservation.reserv_time}</div>
 	        <div class="ei_Copy">${reservation.reserv_name} PERSONS :${reservation.reserv_persons}</div>
 	        <div class="ei_Copy">PHONE:${reservation.reserv_phone} EMAIL: ${reservation.reserv_email}</div>
+	        ${reservation.reserv_date == date} 
 	      </div>
         
-        </c:if>
       </c:forEach>
       
       
