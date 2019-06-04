@@ -3,7 +3,7 @@
 
 
 <mapper namespace="reservationMapper">
-    <select id="selectAll" resultType="map">
+    <select id="selectAll" resultType="ReservationVO">
         SELECT * FROM reservation01
     </select>
     

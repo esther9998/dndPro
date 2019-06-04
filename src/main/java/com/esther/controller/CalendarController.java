@@ -5,7 +5,9 @@ import java.text.Format;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.esther.dnd.GetAWeek;
 import com.esther.model.ReservationVO;
 import com.esther.service.ReservationService;
 
@@ -33,28 +36,63 @@ public class CalendarController {
 		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/admin/calendar");
+		//***************************************************
+		//오늘 날짜
+				LocalDate ld = LocalDate.now();
+				DayOfWeek dayOfWeek = ld.getDayOfWeek();
+				System.out.println(dayOfWeek); 
+				Date localDate = Date.valueOf(ld); // 비교를 위한 형변환
+				String todayDate = localDate.toString();
+				
+		//***************************************************
+		//전체 예약 데이터 가져오기
+				List<ReservationVO> data = null;
+				try {
+					data = service.selectAll();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 		
-		List<ReservationVO> reserv = null;
-		try {
-			reserv = service.selectAll();
-			System.out.println(reserv + "/////////////////됏지?");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-		//DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		LocalDate localDate = LocalDate.now();
-		//Calendar date = dtf.format(localDate);
-		//String[] dateArr =  date.split("/");
+		//***************************************************
+		//daily
+				List<ReservationVO> daily = new ArrayList<ReservationVO>();
+		  for (ReservationVO vo : data) { 
+			  String reservDate = vo.getReserv_date().toString();
+			 if(reservDate.equals( todayDate)) {
+				 boolean v = daily.add(vo);
+				 System.out.println(vo.toString()+"v:"+v);
+			 }else {
+				 logger.info("calendar 페이지 - - Daily 데이터 오류" );
+			 }
+		  
+	}
+		//***************************************************
+		//week - 해당일을 기준으로 
+		  GetAWeek getAweek = new GetAWeek();
+     	String monday = getAweek.getCurMonday();
+     	String sunday = getAweek.getCurSunday();
+     	
+		  
+		//현재 날짜 기준으로 일요일 구하기 
 
-		DayOfWeek dayOfWeek = localDate.getDayOfWeek();
-		System.out.println(localDate); 
-		System.out.println(dayOfWeek); 
+
+
 		
 		
-		model.addAttribute("date", localDate);
-        model.addAttribute("reserv", reserv);
+		//***************************************************
+		//month
+				
+		
+		
+		
+		
+		  
+		  
+		  
+		  
+		model.addAttribute("daily", daily);
+		model.addAttribute("localDate", localDate);
+        model.addAttribute("data", data);
 		
 		return mav;
 	}

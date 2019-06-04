@@ -181,9 +181,9 @@
 				}
 				
 				    
-						 // 오늘날짜에 이전시간을 입력한경우.  
+		 // 오늘날짜에 이전시간을 입력한경우.  
 		    if(dateNow == $("#date").val() ){
-		    	if (editTime < hourNow) {
+		    	if (editTime <= hourNow) {
 						 alert("Please set a valid time.");
 						 $('#time').val("");
 						 $('#time').focus();
