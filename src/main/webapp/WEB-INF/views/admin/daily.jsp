@@ -11,32 +11,29 @@
         <div class="cl_add">+edit</div>
       </div>
     </div>
-    
     <div class="calendar_events">
       <p class="ce_title">Upcoming Events</p>
-  ${reservation.reserv_date} //
-      ${date} ..
-      ${reservation.reserv_date == date}  
-      
-      <c:forEach var="reservation" items="${reserv}" varStatus="status">
-     <%--   <c:if test="${reservation.reserv_date == date}">  --%>
-	      
+      <c:forEach var="oneAppo" items="${reserv}" varStatus="status">
+<%-- 	<c:if test="${'reserv_date' eq 'date'} "> --%>
 	      <div class="event_item">
-	      	<c:if test="${reservation.reserv_status==0}">
+	      	<c:if test="${oneAppo.reserv_status==0}">
 	      		<div class="ei_Dot dot_active"></div>
 	      	</c:if>
-	      	<c:if test="${reservation.reserv_status==1}">
+	      	<c:if test="${oneAppo.reserv_status==1}">
 	      		<div class="ei_Dot dot_attend"></div>
 	      	</c:if>
-	      	<c:if test="${reservation.reserv_status==2}">
+	      	<c:if test="${oneAppo.reserv_status==2}">
 	      		<div class="ei_Dot dot_cancel"></div>
 	      	</c:if>
-	        <div class="ei_Title">${reservation.reserv_date} TIME : ${reservation.reserv_time}</div>
-	        <div class="ei_Copy">${reservation.reserv_name} PERSONS :${reservation.reserv_persons}</div>
-	        <div class="ei_Copy">PHONE:${reservation.reserv_phone} EMAIL: ${reservation.reserv_email}</div>
-	        ${reservation.reserv_date == date} 
+	        <div class="ei_Title">${status.count}.  ${oneAppo.reserv_time}   PERSONS :${oneAppo.reserv_persons}</div>
+	        <div class="ei_Copy"> (${oneAppo.reserv_date} ) </div>
+	        <div class="ei_Copy">NAME: ${oneAppo.reserv_name}  (${oneAppo.reserv_phone} ) </div>
+	        <div class="ei_Copy">EMAIL: ${oneAppo.reserv_email}</div>
+	        ${date} 
+	        ${oneAppo.reserv_date} 
+	        ${oneAppo.reserv_date eq date} 
 	      </div>
-        
+<%-- 	       </c:if>    --%>
       </c:forEach>
       
       

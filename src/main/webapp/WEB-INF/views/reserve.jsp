@@ -77,7 +77,7 @@
 			
 			<script>
 			/* ********************************************************* */
-			// 페이지 초기 세팉
+			// 페이지 초기 세팅   
 			/* ********************************************************* */
 			 $(document).ready( function() {
 				// 타임피커 초기 세팅
@@ -96,19 +96,22 @@
 			});
 			
 			/* ********************************************************* */
-			// 유효성검
+			// 유효성 검사 
 			/* ********************************************************* */
-			function validate(){
+			//이름  
+			function validate(){			
 			    if( $("#name").val().trim()== "" ){
 			     alert( "Please provide your name!" );
 			     $("#name").focus() ;
 			     return false;
 			   }
-			    if( $("#email").val().trim()== "" ){
+			    //이메일  
+			    if( $("#email").val().trim()== "" ){ 
 				     alert( "Please provide your email!" );
 				     $("#email").focus() ;
 				     return false;
 				   }
+				//전화번호  
 			    if( $("#phone").val().trim()== "" || $("#phone").val().trim().length != 11 ){
 				     alert( "Please provide your contact numbers!" );
 				     $("#phone").focus() ;
@@ -125,8 +128,10 @@
 			    	var month = today.getMonth()+1;
 			    	var day = today.getDate();
 			    	var hour = today.getHours();
-			    	var fmToday = month+"/"+day+"/"+year;
-			    	
+			    	var dateNow = month+"/"+day+"/"+year;
+			    	var hourNow = today.getHours();
+			    	console.log(dateNow);
+			    	console.log(hourNow);
 			/* ********************************************************* */
 			   //날짜 유효성 검사 
 			/* ********************************************************* */
@@ -160,27 +165,32 @@
 			    	alert( "Please choose a time for reservation" );
 				     $("#time").focus() ;
 				     return false;
-				     
 				   }
 			
-			    /* 	var getTodayHour = new Date().getHours();
+			   	var getTodayHour = new Date().getHours();
 				var editTime =0;
 				if($("#time").val().includes("pm")){
 					 var temp = $("#time").val().split(":") ;
-					editTime = 12 + temp ;
+					console.log(temp+"ooooooooo");
+					if(temp[0] <= 12){
+						editTime =  temp[0] ;
+					}else{
+						editTime = 12 + temp[0] ;
+					}
+					
 				}
-				 */
+				
 				    
-			/* 	    if(fmToday == 	$("#date").val()&&editTime < getTodayHour){
 						 // 오늘날짜에 이전시간을 입력한경우.  
-						 
+		    if(dateNow == $("#date").val() ){
+		    	if (editTime < hourNow) {
 						 alert("Please set a valid time.");
-					   }  */
-		/* 	    if(fmToday == 	$("#date").val()&&$("#time").val()){
-					 // 오늘날짜에 이전시간을 입력한경우.  
-					 
-					 
-				   }  */
+						 $('#time').val("");
+						 $('#time').focus();
+						 return false;
+				}
+		    }
+						 
 			   return true ;
 			}
 //ajax 데이터 전
@@ -208,6 +218,7 @@ function sendForm() {
 							},
 						error:function(xhr, status,error){
 							alert("There is an error occured. Please fill the form again. ");
+						alert(xhr+"+++++++++" +status+"////////////"+error);
 							location.reload();
 						}
 					
