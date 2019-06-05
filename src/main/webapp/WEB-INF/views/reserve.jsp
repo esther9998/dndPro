@@ -171,12 +171,11 @@
 				var editTime =0;
 				if($("#time").val().includes("pm")){
 					 var temp = $("#time").val().split(":") ;
-					console.log(temp+"ooooooooo");
-					if(temp[0] <= 12){
-						editTime =  temp[0] ;
-					}else{
 						editTime = 12 + temp[0] ;
-					}
+				//	alert(temp+"ooooooooo"+editTime);
+					
+				}else{
+						editTime =  temp[0] ;
 					
 				}
 				
