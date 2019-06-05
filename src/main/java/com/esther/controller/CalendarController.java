@@ -90,16 +90,14 @@ public class CalendarController {
 		//month
 				
 		
-		
-		
-		
 		  
 		  
 		  
 		  
      	model.addAttribute("daily", daily);
-     	model.addAttribute("weekEndDate", monday);
-     	model.addAttribute("weekStartDate", sunday);
+     	model.addAttribute("weekStartDate", monday);
+     	model.addAttribute("weekEndDate", sunday);
+     	model.addAttribute("sevenDays", sevenDays);
      	model.addAttribute("week", week);
 		model.addAttribute("localDate", localDate);
         model.addAttribute("data", data);
