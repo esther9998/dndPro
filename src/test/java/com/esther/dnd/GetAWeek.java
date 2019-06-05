@@ -3,6 +3,7 @@ package com.esther.dnd;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -98,18 +99,16 @@ public class GetAWeek {
 		c1.setTime( d1 );
 		c2.setTime( d2 );
 
-		//시작날짜와 끝 날짜를 비교해, 시작날짜가 작거나 같은 경우 출력
+		SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd");
+		List<String>  list = new ArrayList<String>() ;
 
 		while( c1.compareTo( c2 ) !=1 ){
-
-		//출력
-		System.out.println("//////////////////////////");
-		System.out.printf("%tF\n",c1.getTime());
-
-		//시작날짜 + 1 일
-		  c1.add(Calendar.DATE, 1);
-		System.out.println("ffffffffffffffffffff=============="+c1  );
-		}
+			//출력
+			String strDate = sdf.format(c1.getTime());
+			list.add(strDate);
+			//시작날짜 + 1 일
+			  c1.add(Calendar.DATE, 1);
+			}
 		}
 		
 }
