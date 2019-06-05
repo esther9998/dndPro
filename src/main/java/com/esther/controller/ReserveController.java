@@ -55,6 +55,7 @@ public class ReserveController {
 			//데이트 형변환 
 			String strDate = (String) formData.get("date");
 			Date date = DateFormating.transformDate(strDate);
+			System.out.println("자야되ㅣㅣㅣ"+  date);
 			vo.setReserv_date(date);
 			//타임 형변
 			String strTime = (String) formData.get("time");
