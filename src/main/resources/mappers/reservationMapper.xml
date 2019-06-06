@@ -27,7 +27,7 @@
 			#{reserv_time}, 
 			now(), 
 			null,
-			1)
+			0)
 		</insert>
 
 </mapper>

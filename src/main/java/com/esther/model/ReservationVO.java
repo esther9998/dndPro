@@ -5,13 +5,20 @@ import java.sql.Time;
 
 public class ReservationVO {
 	
+	public int getReserv_idx() {
+		return reserv_idx;
+	}
+	public void setReserv_idx(int reserv_idx) {
+		this.reserv_idx = reserv_idx;
+	}
 	@Override
 	public String toString() {
-		return "ReservationVO [reserv_name=" + reserv_name + ", reserv_phone=" + reserv_phone + ", reserv_email="
-				+ reserv_email + ", reserv_persons=" + reserv_persons + ", reserv_date=" + reserv_date
-				+ ", reserv_time=" + reserv_time + ", reserv_register=" + reserv_register + ", reserv_status="
-				+ reserv_status + "]";
+		return "ReservationVO [reserv_idx=" + reserv_idx + ", reserv_name=" + reserv_name + ", reserv_phone="
+				+ reserv_phone + ", reserv_email=" + reserv_email + ", reserv_persons=" + reserv_persons
+				+ ", reserv_date=" + reserv_date + ", reserv_time=" + reserv_time + ", reserv_register="
+				+ reserv_register + ", reserv_status=" + reserv_status + "]";
 	}
+	int reserv_idx;
 	String reserv_name;
 	String reserv_phone;
 	String reserv_email;
@@ -19,7 +26,7 @@ public class ReservationVO {
 	Date reserv_date;
 	Time reserv_time;
 	Date reserv_register;
-	String reserv_status;
+	int reserv_status;
 	
 	public String getReserv_name() {
 		return reserv_name;
@@ -63,11 +70,11 @@ public class ReservationVO {
 	public void setReserv_register(Date reserv_register) {
 		this.reserv_register = reserv_register;
 	}
-	public String getReserv_status() {
+	public int getReserv_status() {
 		return reserv_status;
 	}
-	public void setReserv_status(String reserv_status) {
-		this.reserv_status = reserv_status;
+	public void setReserv_status(int i) {
+		this.reserv_status = i;
 	}
 	
 

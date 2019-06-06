@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.esther.model.ReservationVO;
 import com.esther.service.ReservationService;
 import com.esther.util.DateFormating;
+import com.esther.util.SendMail;
 import com.esther.util.TimeFormating;
 
 @Controller
@@ -33,7 +34,6 @@ public class ReserveController {
 	
 	@RequestMapping(value = "/reserve", method = RequestMethod.GET)
 	public ModelAndView reserve(Locale locale, Model model) {
-		logger.info("갤러리 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("/reserve");
  
@@ -55,7 +55,6 @@ public class ReserveController {
 			//데이트 형변환 
 			String strDate = (String) formData.get("date");
 			Date date = DateFormating.transformDate(strDate);
-			System.out.println("자야되ㅣㅣㅣ"+  date);
 			vo.setReserv_date(date);
 			//타임 형변
 			String strTime = (String) formData.get("time");
@@ -65,8 +64,13 @@ public class ReserveController {
 			
 			
 			try {
-				int result = service.insertReserv(vo);
-				System.out.println("결과가 1이면 성공= "+result);
+				int result = service.insertReserv(vo); 
+				String rst = null;
+				if(result == 1){
+					SendMail sm = new SendMail();
+					rst = sm.sendmail(vo);
+				}
+				System.out.println("결과가 1이면 성공= "+result +"//"+ rst);
 			} catch (Exception e) {
 				System.out.println("컨트롤러에서 에러"+vo.toString());
 				e.printStackTrace();

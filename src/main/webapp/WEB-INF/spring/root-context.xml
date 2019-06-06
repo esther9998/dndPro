@@ -38,6 +38,7 @@
         <property name="basePackage" value="com.esther.controller" />
     </bean> -->
 <context:component-scan base-package="com.esther.dao"></context:component-scan>
+<context:component-scan base-package="com.esther.admin"></context:component-scan>
 <context:component-scan base-package="com.esther.controller"></context:component-scan>
 <context:component-scan base-package="com.esther.model"></context:component-scan>
 <context:component-scan base-package="com.esther.service"></context:component-scan>

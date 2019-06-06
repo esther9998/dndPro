@@ -43,7 +43,7 @@
 					</c:if>				
 				</c:if>
 			</c:forEach>
-			<div class="event_item">
+			<div class="event_item" <c:if test="${localDate== sevenDays}"> style="background: lightblue;" </c:if> >
 				${sevenDays} 총예약 :
 				<c:out value="${sum}" /> 건 <br>
 				<div class="ei_Dot dot_active"></div>  예약 :  <c:out value="${appo}" />팀
@@ -55,6 +55,7 @@
 				<div class="ei_Dot dot_noShow"></div>  부재 :  <c:out value="${noshow}" />팀
 				<br>
 			</div>
+				<hr>
 		</c:forEach>
     </div>
   </div>

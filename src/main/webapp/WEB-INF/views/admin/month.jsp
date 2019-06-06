@@ -274,7 +274,7 @@
   height: 30px;
   background: rgba(60, 60, 60, 1);
   line-height: 30px;
-
+  z-index: 101;
 }
 
 .entry {
@@ -451,7 +451,7 @@
 
 	    this.title.innerHTML = this.current.format('MMMM YYYY');
 	  }
-
+/* **************************************************************** */
 	  Calendar.prototype.drawMonth = function() {
 	    var self = this;
 	    
@@ -677,7 +677,7 @@
 	    }
 	  }
 
-	  Calendar.prototype.drawLegend = function() {
+  Calendar.prototype.drawLegend = function() {
 	    var legend = createElement('div', 'legend');
 	    var calendars = this.events.map(function(e) {
 	      return e.calendar + '|' + e.color;
@@ -692,7 +692,8 @@
 	      legend.appendChild(entry);
 	    });
 	    this.el.appendChild(legend);
-	  }
+	  } 
+
 
 	  Calendar.prototype.nextMonth = function() {
 	    this.current.add('months', 1);

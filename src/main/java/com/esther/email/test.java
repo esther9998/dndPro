@@ -1,4 +1,4 @@
-package com.conco.concotrade.email;
+package com.esther.email;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

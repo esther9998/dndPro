@@ -35,4 +35,6 @@
 <link rel="stylesheet" href="/resources/css/contact.css">
 <link rel="stylesheet" href="/resources/css/slideImg.css">
 <link rel="stylesheet" href="/resources/css/schedule-day.css">
+
+<script src="/resources/js/jquery-3.2.1.min.js"></script>
 </head>

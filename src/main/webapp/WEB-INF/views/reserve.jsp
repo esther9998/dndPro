@@ -171,14 +171,13 @@
 				var editTime =0;
 				if($("#time").val().includes("pm")){
 					 var temp = $("#time").val().split(":") ;
-						editTime = 12 + temp[0] ;
-				//	alert(temp+"ooooooooo"+editTime);
-					
-				}else{
-						editTime =  temp[0] ;
-					
+					 if (temp[0]=="12") {
+						editTime =  Number(temp[0]);
+					}else{
+						editTime = 12 + Number(temp[0]);
+					}
+				alert(temp+"ooooooooo"+editTime);
 				}
-				
 				    
 		 // 오늘날짜에 이전시간을 입력한경우.  
 		    if(dateNow == $("#date").val() ){
