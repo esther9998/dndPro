@@ -39,7 +39,6 @@
 					<li><a href="/reserve">Reservation</a></li>
 					<li><a href="/contact">Contacts</a></li>
 					<li><a href="/calendar">Calendar</a></li>
-					<li><a href="/calendar/daily">Daily</a></li>
           </ul>
         </div>
       </nav>

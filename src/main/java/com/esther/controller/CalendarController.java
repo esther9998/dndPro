@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,10 +34,16 @@ public class CalendarController {
 	@Inject
     private ReservationService service;
 	@RequestMapping(value = "/calendar", method = RequestMethod.GET)
-	public ModelAndView reserve(Locale locale, Model model) {
+	public ModelAndView reserve( HttpSession session, Locale locale, Model model) {
 		logger.info("calendar 페이지 >>>>>>>>>>>>>>>>>>>" );
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("/admin/calendar");
+		
+		if (session.getAttribute("admin_seesion") == null) {		
+			mav.setViewName("/admin/loginPage");
+		}else{
+			mav.setViewName("/admin/calendar");
+	
+		
 		//***************************************************
 		//오늘 날짜
 				LocalDate ld = LocalDate.now();
@@ -88,11 +95,6 @@ public class CalendarController {
      	}
 		//***************************************************
 		//month
-				
-		
-		  
-		  
-		  
 		  
      	model.addAttribute("daily", daily);
      	model.addAttribute("weekStartDate", monday);
@@ -101,6 +103,7 @@ public class CalendarController {
      	model.addAttribute("week", week);
 		model.addAttribute("localDate", localDate);
         model.addAttribute("data", data);
+		}
 		
 		return mav;
 	}

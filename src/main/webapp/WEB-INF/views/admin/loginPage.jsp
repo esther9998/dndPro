@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>관리자 로그인</title>
-<script type="text/JavaScript"  src="/js/jquery-3.1.1.min.js"></script>
+<!-- <script type="text/JavaScript"  src="/js/jquery-3.1.1.min.js"></script>
 <script type="text/JavaScript"  src="/js/jquery.history.js"></script>
-<script language="javascript" type="text/javascript" src="/js/common.js"></script>  
-<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+<script language="javascript" type="text/javascript" src="/js/common.js"></script>   -->
+<link rel="stylesheet"href="/resources/fonts/fontawesome/css/font-awesome.min.css">
+
 <style>
 .admin_login { width:296px; margin:180px auto; }
 .admin_login img { margin:0 0 22px 98px; }
@@ -22,18 +22,18 @@
 
 $(document).ready(function () {
 	$("#login_btn").on('click', function() {
-		ADM_loginChk();
+		admin_loginChk();
 	});
 	
     $("#id").keydown(function (key) {
         if(key.keyCode == 13) {
-        	ADM_loginChk();
+        	admin_loginChk();
         }
     });
     
     $("#pw").keydown(function (key) {
        if(key.keyCode == 13) {
-    	   ADM_loginChk();
+    	   admin_loginChk();
        }
     });
     
@@ -45,7 +45,7 @@ $(document).ready(function () {
     	  $('#id').trigger('focus')
     	})
 });
-function ADM_loginChk() {
+function admin_loginChk() {
 
 	if ( $("#id").val() == "" ) {
 		alert("아이디를 입력해주세요.");	
@@ -55,47 +55,30 @@ function ADM_loginChk() {
 		alert("비밀번호를 입력해주세요.");
 		return;
 	}
-	var url = "https://concokorea.com/ADM/loginProcess";
+	var data ={
+			id:$("#id").val(),
+			pw:$("#pw").val()
+	}
 
 	$.ajax({
-		beforeSend : function(xhr) {
+		/* beforeSend : function(xhr) {
 			xhr.setRequestHeader("AJAX", true);
-		},
+		}, */
 		type:"POST",
-		url:url,
-		data: {
-			"id":$("#id").val(),
-			"pw":$("#pw").val()
-		},
+		url:'/admin_chk',
+		data:data,
 		dataType:"json",
-		success:function(obj) {  
- 			if (obj.ResultCode == "0") {
-				location.href="/ADM/admin_board";
- 			} else if ( obj.ResultCode == "1") {
-				alert(lang["alert"]["22"]);
-				$('input[type="password"]').val(""); 
-				return;	
- 			} else if ( obj.ResultCode == "2") {
- 				alert(lang["alert"]["24"]);
- 				$('input[type="password"]').val(""); 
- 				return;
- 			} else if ( obj.ResultCode == "3"){
-				alert(lang["alert"]["29"]);
-				$('input[type="password"]').val(""); 
-				return;
- 			} else if ( obj.ResultCode == "4") {
- 				alert(lang["alert"]["23"]);
- 				location.replace("/");
- 			} else {
-				alert(lang["alert"]["22"]);
-				$('input[type="password"]').val(""); 
-				$('input[type="password"]').val(""); 
-				return;	
+		async: false,
+		success:function(rst) {  
+ 			if (rst !== null) {
+				location.href="/calendar";
+ 			}else{
+ 			 	alert("확인되지 않는 로그인 정보입니다.");	
  			}
 		},
 		error:function(xhr, status, err) {
 			if (xhr.status == 403) {
-				alert(lang["alert"]["23"]);
+				alert("ajax 에러");
 				location.replace("/");
 			}
 		}
@@ -104,17 +87,24 @@ function ADM_loginChk() {
 </script>
 </head>
 <body>
-<div class="admin_login">
+<div class="section bg-light" data-aos="fade-up" id="section-reservation">
+          <div class="container">
+            <div class="row section-heading justify-content-center">
+              <div class="col-md-8 text-center">
+                <h2 class="heading mb-3">관리자 로그인</h2>
+              </div>
+            </div>
+<!-- <div class="admin_login">
 	<div class="title"> 관리자 페이지</div>
 	<input type="text" id="id">
 	<input type="password" id="pw">
 	<div class="admin_login_button" id="login_btn">LogIn</div>
-</div>
+</div> -->
 <!-- --------------- -->
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<!-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true"> -->
+  <div class="modal-dialog" role="document" >
+    <div class="modal-content"> 
       <div class="modal-header text-center">
         <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -123,15 +113,15 @@ function ADM_loginChk() {
       </div>
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
-          <i class="fas fa-envelope prefix grey-text"></i>
+          <i class="fa fa-lg fa-envelope  prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="defaultForm-email">Your id</label>
           <input type="email" id="id" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label>
         </div>
 
         <div class="md-form mb-4">
-          <i class="fas fa-lock prefix grey-text"></i>
-          <input type="password" id="pw" class="form-control validate">
+          <i class="fa fa-2x fa-lock prefix grey-text"></i>
           <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+          <input type="password" id="pw" class="form-control validate">
         </div>
 
       </div>
@@ -140,13 +130,15 @@ function ADM_loginChk() {
       </div>
     </div>
   </div>
-</div>
+  </div>
+  </div>
+<!-- </div> -->
 
-<div class="text-center">
+<!-- <div class="text-center">
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
     Modal Login Form</a>
 </div>
-
+ -->
 
 <!-- <input type="text" size="15" id="id"> -->
 <!-- <input type="password" size="15" id="pw"> -->
