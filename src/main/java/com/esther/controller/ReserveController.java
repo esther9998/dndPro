@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.esther.model.ReservationVO;
 import com.esther.service.ReservationService;
 import com.esther.util.DateFormating;
+import com.esther.util.SendMail;
 import com.esther.util.TimeFormating;
 
 @Controller
@@ -61,10 +62,15 @@ public class ReserveController {
 			vo.setReserv_time(time);
 			System.out.println("vo: "+vo.toString());
 			
-			
+			SendMail sm = new SendMail();
 			try {
+				// 디비에 예약정보 저장
 				int result = service.insertReserv(vo);
 				System.out.println("결과가 1이면 성공= "+result);
+				// 이메일 발송
+				String msg = sm.sendmail(vo);
+				logger.info(msg);
+				
 			} catch (Exception e) {
 				System.out.println("컨트롤러에서 에러"+vo.toString());
 				e.printStackTrace();

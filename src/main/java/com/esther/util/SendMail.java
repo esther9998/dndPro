@@ -31,10 +31,12 @@ import java.util.Properties;
 	        protected PasswordAuthentication getPasswordAuthentication() { 
 	        return new PasswordAuthentication(username, password); 
 	        }});
+	        
+	        
 	        try{
 	            Message message = new MimeMessage(session); 
 	            message.setFrom(new InternetAddress("webtask365@gmail.com", "웹태스크365 고객서비스 "));
-	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("esther9998@gmail.com")); 
+	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(vo.getReserv_email())); 
 	            message.setSubject("Morock booking confirmation ");
 	            message.setText("Dear,"   
 	       //     message.setContent("Dear, customer"

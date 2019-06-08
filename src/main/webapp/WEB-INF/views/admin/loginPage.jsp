@@ -70,11 +70,13 @@ function admin_loginChk() {
 		dataType:"json",
 		async: false,
 		success:function(rst) {  
- 			if (rst !== null) {
+		
+ 			 	alert("결과: "+rst);	
 				location.href="/calendar";
+ 			/* if (rst !== null) {
  			}else{
  			 	alert("확인되지 않는 로그인 정보입니다.");	
- 			}
+ 			} */
 		},
 		error:function(xhr, status, err) {
 			if (xhr.status == 403) {
