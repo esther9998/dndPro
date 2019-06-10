@@ -43,7 +43,7 @@ public class ReserveController {
 	//예약 등록
 	@RequestMapping(value = "/reservedInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public ReservationVO   reservedInfo(@RequestBody Map formData,HttpServletRequest httpRequest){
+	public int  reservedInfo(@RequestBody Map formData,HttpServletRequest httpRequest){
 		logger.info("ajax 예약 reservedInfo>>>>>>>>>>>>>>>>>>>" );
 			System.out.println("컨트롤에서 출력"+formData);
 			ReservationVO vo = new ReservationVO();
@@ -62,22 +62,30 @@ public class ReserveController {
 			vo.setReserv_time(time);
 			System.out.println("vo: "+vo.toString());
 			
+			//이메일 발송 성공1, 
+			//디비 저장 성공1,
+			//에러 0, 
+			//이메일 발송 에러 2
 			SendMail sm = new SendMail();
 			try {
-				// 디비에 예약정보 저장
-				int result = service.insertReserv(vo);
-				System.out.println("결과가 1이면 성공= "+result);
 				// 이메일 발송
-				String msg = sm.sendmail(vo);
-				logger.info(msg);
+				int resp = sm.sendmail(vo);
+				logger.info( "이메일 발송 성공이면  1 : " + resp);
+					if(resp == 1){
+						// 디비에 예약정보 저장
+						int result = service.insertReserv(vo);
+						System.out.println("결과가 1이면 성공= "+result);
+						return result;
+					}else{
+						return 0;
+					}
 				
 			} catch (Exception e) {
 				System.out.println("컨트롤러에서 에러"+vo.toString());
 				e.printStackTrace();
+				return 0;
 			}
-	        
 			
-			return new ReservationVO();
 	}
 	
 }

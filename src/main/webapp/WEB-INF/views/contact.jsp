@@ -3,9 +3,9 @@
 <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-			<div class="section bg-light" data-aos="fade-up" id="section-contact">
+			<div class="section bg-light" data-aos="fade-up" id="section-contact  site-meun-top">
 				<div class="container">
-					<div class="row section-heading justify-content-center">
+					<div class="row section-heading justify-content-center site-meun-top">
 						<div class="col-md-8 text-center">
 							<h2 class="heading mb-3">Contacts</h2><hr>
 						</div>
@@ -32,6 +32,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 			<!-- .section -->
 <script>

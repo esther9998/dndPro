@@ -1,5 +1,7 @@
 package com.esther.controller;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 import java.sql.Date;
 
 import java.text.Format;
@@ -49,8 +51,8 @@ public class CalendarController {
 				LocalDate ld = LocalDate.now();
 				DayOfWeek dayOfWeek = ld.getDayOfWeek();
 				System.out.println(dayOfWeek); 
-				Date localDate = Date.valueOf(ld); // 비교를 위한 형변환
-				String todayDate = localDate.toString();
+				Date localDate = Date.valueOf(ld); // 비교를 위한 형변환 
+				String todayDate = localDate.toString(); // mav로 jsp에 뿌릴때 String형의 data와 비교 해주기 위해서 만듦.
 		//***************************************************
 		//전체 예약 데이터 가져오기
 				List<ReservationVO> data = null;
@@ -60,20 +62,7 @@ public class CalendarController {
 					e.printStackTrace();
 				}
 		
-		//***************************************************
-		//daily
-				List<ReservationVO> daily = new ArrayList<ReservationVO>();
-		  for (ReservationVO vo : data) { 
-			  String reservDate = vo.getReserv_date().toString();
-			 if(reservDate.equals(todayDate)) {
-				 boolean v = daily.add(vo);
-				 System.out.println("daily data : "+vo.toString());
-			 }else {
-				 System.out.println("didididididi"+reservDate);
-				 System.out.println("calendar 페이지 - - Daily 데이터 오류" );
-			 }
-		  
-	}
+	
 		//***************************************************
 		//week - 해당일을 기준으로 그 주간 날짜들 가져오기 (monday ~ sunday)
 		List<String> sevenDays = new ArrayList<String>();
@@ -96,11 +85,11 @@ public class CalendarController {
 		//***************************************************
 		//month
 		  
-     	model.addAttribute("daily", daily);
      	model.addAttribute("weekStartDate", monday);
      	model.addAttribute("weekEndDate", sunday);
      	model.addAttribute("sevenDays", sevenDays);
      	model.addAttribute("week", week);
+     	model.addAttribute("todayDate", todayDate);
 		model.addAttribute("localDate", localDate);
         model.addAttribute("data", data);
 		}

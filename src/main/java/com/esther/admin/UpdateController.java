@@ -23,8 +23,8 @@ import com.esther.service.UpdateService;
 		@Inject
 	    private UpdateService service;
 		
-		@RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
 		@ResponseBody
+		@RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
 		public int updateStatus(@RequestBody Map data,HttpServletRequest httpRequest){
 			System.out.println("어드민  컨트롤에서 출력"+data);
 			ReservationVO vo = new ReservationVO();
@@ -37,13 +37,16 @@ import com.esther.service.UpdateService;
 			vo.setReserv_idx(updateIdx);
 			vo.setReserv_status(updateVal);
 			
-			try {
-				int result = service.updateOne(vo); 
-			return result;
-			}catch (Exception e) {
-				System.out.println( "업데이트 디비 오류" + e);
-				return 0;
-			}
+				int result = 0;
+				try {
+					result = service.updateOne(vo);
+				System.out.println(" 업데이트 결과1이면 성공   :" +result);
+					return result;
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+				return result;
 		}
 	}
 

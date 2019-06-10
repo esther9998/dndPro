@@ -68,7 +68,12 @@ body {
 	line-height: 1.5;
 	color: grey;
 	text-align: left;
-	background-color: #fff
+	background-color: #fff;
+}
+	body::-webkit-scrollbar { 
+    display: none; 
+}
+	
 }
 
 [tabindex="-1"]:focus {
@@ -553,7 +558,7 @@ pre code {
 
 @media ( min-width :1200px) {
 	.container {
-		max-width: 1140px
+		max-width: 1140px;
 	}
 }
 
@@ -6925,7 +6930,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 .justify-content-center {
 	-webkit-box-pack: center !important;
 	-ms-flex-pack: center !important;
-	justify-content: center !important
+	justify-content: center !important;
 }
 
 .justify-content-between {

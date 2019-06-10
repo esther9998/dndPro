@@ -95,6 +95,10 @@ textarea.form-control {
   font-size: 20px;
 }
 
+.site-meun-top{
+	    margin-top: 50px;
+}
+
 .site-menu.site-menu-show {
   -webkit-transform: translateX(0%);
   -ms-transform: translateX(0%);
@@ -1283,7 +1287,7 @@ textarea.form-control {
 }
 
 .cover_1 .img_bg, .cover_1 .img_bg > .container > .row {
-  min-height: 700px;
+  min-height: 800px;
   height: 100vh;
 }
 
@@ -1317,6 +1321,7 @@ textarea.form-control {
     font-size: 70px;
     font-weight: 900;
     line-height: 1.2;
+    margin-top: 100px;
   }
 }
 
@@ -1681,7 +1686,7 @@ textarea.form-control {
 
 .ftco-footer {
   background: #121212;
-  padding: 7em 0;
+  padding-top:50px;
   font-size: 15px;
   font-weight: 400;
 }

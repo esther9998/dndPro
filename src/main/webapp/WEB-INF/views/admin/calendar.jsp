@@ -1,14 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
- <div class="bg-light">
-  <div class="container">
+ <div class="bg-light" id="section-menu" data-aos="fade-up">
+  	<div class="container">
+					<div class="row section-heading justify-content-center site-meun-top">
+						<div class="col-md-8 text-center">
+							<h2 class="heading mb-3">Schedules</h2>
+							<hr>
+						</div>
+					</div>
  <!--  <div class="nav nav-tabs">
     <button class="active nav-item"><a  data-toggle="tab" href="#day">Today</a></button>
     <button  data-toggle="tab nav-item"><a href="#week">Week</a></button>
     <button  data-toggle="tab nav-item"><a href="#month">Month</a></button>
   </div> -->
-  <h2>Schedules</h2>
   <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#day">Today</a>

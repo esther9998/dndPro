@@ -3,7 +3,7 @@
     <div class="main-wrap " id="section-home">
 			<div class="section bg-light" id="section-menu" data-aos="fade-up">
 				<div class="container">
-					<div class="row section-heading justify-content-center ">
+					<div class="row section-heading justify-content-center site-meun-top">
 						<div class="col-md-8 text-center">
 							<h2 class="heading mb-3">About</h2>
 							<hr>

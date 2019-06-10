@@ -3,9 +3,9 @@
     	<script src="/resources/js/jquery-3.2.1.min.js"></script>
 <div class="section bg-light" data-aos="fade-up" id="section-reservation">
           <div class="container">
-            <div class="row section-heading justify-content-center">
+            <div class="row section-heading justify-content-center site-meun-top">
               <div class="col-md-8 text-center">
-                <h2 class="heading mb-3">Reservation</h2>
+                <h2 class="heading mb-3">Reservation</h2><hr>
               </div>
             </div>
             <div class="row justify-content-center">
@@ -176,7 +176,6 @@
 					}else{
 						editTime = 12 + Number(temp[0]);
 					}
-				alert(temp+"ooooooooo"+editTime);
 				}
 				    
 		 // 오늘날짜에 이전시간을 입력한경우.  
@@ -211,8 +210,18 @@ function sendForm() {
 						dataType: 'json',
 						data:  JSON.stringify(data),
 						success :function(data){
-							alert("Thank you for your booking. We send you the confirmation email. ");
+							if(data == 1){
+							alert( data+"Thank you for your booking!"
+									+ "\n\n We send you the confirmation email. " 
+									+ "\n\n To cancel or change your schedule, check the email.");
 							location.reload();
+							}else if(data == 0){
+							alert(data+"Email address is not validate. ");
+							location.reload();
+							}else{
+							alert(data+"There is error occured. Please try again. ");
+							location.reload();
+							}
 							},
 						error:function(xhr, status,error){
 							alert("There is an error occured. Please fill the form again. ");

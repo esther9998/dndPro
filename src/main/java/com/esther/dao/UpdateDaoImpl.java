@@ -14,11 +14,11 @@ public class UpdateDaoImpl implements UpdateDao{
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private static final String Namespace = "updateMapper";
+	private static final String Namespace = "reservationMapper";
 
 	@Override
 	public int updateOne(ReservationVO vo) throws Exception {
-		System.out.println("**********"+sqlSession.selectList(Namespace+".updateOne"));
+		System.out.println("**********"+sqlSession.update(Namespace+".updateOne"));
 		return sqlSession.update(Namespace+".updateOne");
 	}
 	

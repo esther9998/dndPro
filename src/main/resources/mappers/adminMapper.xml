@@ -8,6 +8,4 @@
         WHERE
 		admin_id = #{admin_id} and admin_pw = #{admin_pw}
     </select>
-    
-
 </mapper>

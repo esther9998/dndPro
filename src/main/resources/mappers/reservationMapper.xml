@@ -9,25 +9,12 @@
     
     <insert id="insertReserv" parameterType="ReservationVO">
 		insert into reservation01(
-			reserv_name, 
-			reserv_phone, 
-			reserv_email, 
-			reserv_persons,
-			reserv_date, 
-			reserv_time, 
-			reserv_register, 
-			reserv_etc, 
-			reserv_status) 
+			reserv_name, reserv_phone, reserv_email, reserv_persons,reserv_date, reserv_time, reserv_register, reserv_etc, reserv_status) 
 		values (
-			#{reserv_name},
-			#{reserv_phone}, 
-			#{reserv_email},
-			#{reserv_persons},
-			#{reserv_date}, 
-			#{reserv_time}, 
-			now(), 
-			null,
-			0)
+			#{reserv_name},#{reserv_phone}, #{reserv_email},#{reserv_persons},#{reserv_date}, #{reserv_time}, now(), null,0)
 		</insert>
+<update  id="updateOne" parameterType="ReservationVO">
+	UPDATE reservation01 SET reserv_status = #{reserv_status} WHERE reserv_idx = #{reserv_idx}
+</update>
 
 </mapper>

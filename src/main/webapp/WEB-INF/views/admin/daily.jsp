@@ -7,7 +7,7 @@
     <div class="calendar_plan">
       <div class="cl_plan">
         <div class="cl_title">Today</div>
-        <div class="cl_copy">${localDate}</div>
+        <div class="cl_copy">${todayDate}</div>
       </div>
     </div>
     <div class="calendar_events">
@@ -19,79 +19,31 @@
       <button class="btn btn-info"><div class="ei_Dot dot_cancel"></div>  취소</button>
      <button class="btn btn-info"><div class="ei_Dot dot_noShow"></div>  부재</button>
 <hr>
-		<c:forEach var="oneAppo" items="${daily}" varStatus="status">
+		<c:forEach var="daily" items="${data}" varStatus="status">
 					<!-- 예약 상태 -->
-					<c:if test="${oneAppo.reserv_status==0}">
+					<c:if test="${daily.reserv_date  eq  todayDate}">
 						<div class="event_item" >
 						<div class="ei_Dot dot_active"></div>
-						<select style="margin-top: 20px;" name="${oneAppo.reserv_idx}" id="select_status">
-							<option value="0" selected="selected">예약 <option>
-							<option value="1" >완료</option>
-							<option value="2">취소</option>
-							<option value="3">부재</option>
+						<select style="margin-top: 20px;" name="${daily.reserv_idx}" id="select_status">
+							<option value="0" <c:if test="${daily.reserv_status =='0'}"> selected </c:if>>예약 <option>
+							<option value="1" <c:if test="${daily.reserv_status =='1'}"> selected </c:if>>완료</option>
+							<option value="2"<c:if test="${daily.reserv_status =='2'}"> selected </c:if>>취소</option>
+							<option value="3"<c:if test="${daily.reserv_status =='3'}"> selected </c:if>>부재</option>
 						</select>
-			        <div class="ei_Title">${status.count}.  ${oneAppo.reserv_time}   PERSONS :${oneAppo.reserv_persons}</div>
-			        <div class="ei_Copy"> (${oneAppo.reserv_date} ) </div>
-			        <div class="ei_Copy">NAME: ${oneAppo.reserv_name}  (${oneAppo.reserv_phone} ) </div>
-			        <div class="ei_Copy">EMAIL: ${oneAppo.reserv_email}</div>
+			        <div class="ei_Title">예약자 : ${daily.reserv_name} </div>
+			        <div class="ei_Copy">시간 :${daily.reserv_time}  </div>
+			        <div class="ei_Copy">인원 :${daily.reserv_persons}</div>
+			        <div class="ei_Copy">예약날짜 : ${daily.reserv_date}  등록날짜: ${daily.reserv_register} </div>
+			        <div class="ei_Copy">폰번호: ${daily.reserv_phone}  | EMAIL: ${daily.reserv_email}</div>
 					</div>
 					</c:if>
-					
-					<!--완료  상태 -->
-					<c:if test="${oneAppo.reserv_status==1}">
-					<div class="event_item" >
-						<div class="ei_Dot dot_attend"></div>
-						<select style="margin-top: 20px;" name="${oneAppo.reserv_idx}" id="select_status">
-							<option value="0">예약<option>
-							<option value="1" selected="selected">완료</option>
-							<option value="2">취소</option>
-							<option value="3">부재</option>
-						</select>
-			        <div class="ei_Title">${status.count}.  ${oneAppo.reserv_time}   PERSONS :${oneAppo.reserv_persons}</div>
-			        <div class="ei_Copy"> (${oneAppo.reserv_date} ) </div>
-			        <div class="ei_Copy">NAME: ${oneAppo.reserv_name}  (${oneAppo.reserv_phone} ) </div>
-			        <div class="ei_Copy">EMAIL: ${oneAppo.reserv_email}</div>
-					</div>
-					</c:if>
-					<!--취소  상태 -->
-					<c:if test="${oneAppo.reserv_status==2}">
-			        <div class="event_item" >
-					<div class="ei_Dot dot_cancel"></div>
-						<select style="margin-top: 20px;" name="${oneAppo.reserv_idx}" id="select_status">
-							<option value="0">예약 <option>
-							<option value="1">완료</option>
-							<option value="2" selected="selected">취소</option>
-							<option value="3">부재</option>
-						</select>
-			        <div class="ei_Title">${status.count}.  ${oneAppo.reserv_time}   PERSONS :${oneAppo.reserv_persons}</div>
-			        <div class="ei_Copy"> (${oneAppo.reserv_date} ) </div>
-			        <div class="ei_Copy">NAME: ${oneAppo.reserv_name}  (${oneAppo.reserv_phone} ) </div>
-			        <div class="ei_Copy">EMAIL: ${oneAppo.reserv_email}</div>
-					</div>
-					</c:if>
-					<!--부재   상태 -->
-					<c:if test="${oneAppo.reserv_status==3}">
-					 <div class="event_item" >
-					<div class="ei_Dot dot_noShow"></div>
-						<select style="margin-top: 20px;"  name="${oneAppo.reserv_idx}" id="select_status">
-							<option value="0">예약<option>
-							<option value="1">  완료</option>
-							<option value="2">취소</option>
-							<option value="3" selected="selected">부재</option>
-						</select>
-			        <div class="ei_Title">${status.count}.  ${oneAppo.reserv_time}   PERSONS :${oneAppo.reserv_persons}</div>
-			        <div class="ei_Copy"> (${oneAppo.reserv_date} ) </div>
-			        <div class="ei_Copy">NAME: ${oneAppo.reserv_name}  (${oneAppo.reserv_phone} ) </div>
-			        <div class="ei_Copy">EMAIL: ${oneAppo.reserv_email}</div>
-			        </div>
-					</c:if>
-				
 		      </c:forEach>
       
     </div>
   </div>
   
   <script>
+
   // 예약상태 변경 
   $("#select_status").change(function () {
     var idx = "";

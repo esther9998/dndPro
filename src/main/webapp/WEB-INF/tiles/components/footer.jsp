@@ -47,7 +47,7 @@
 						</div>
 					</div>
 
-					<div class="row pt-5">
+					<div class="row">
 						<div class="col-md-12 text-center">
 							<p>
 								&copy; Copyright 2018. All Rights Reserved. 

@@ -3,7 +3,7 @@
 
 			<div class="section bg-light" id="section-menu" data-aos="fade-up">
 				<div class="container">
-					<div class="row section-heading justify-content-center mb-5">
+					<div class="row section-heading justify-content-center mb-5 site-meun-top">
 						<div class="col-md-8 text-center">
 							<h2 class="heading mb-3">Menu</h2>
 							<hr>

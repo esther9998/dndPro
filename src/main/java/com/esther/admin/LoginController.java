@@ -36,29 +36,25 @@ public class LoginController {
 		}
 		//로그인 체크 
 		@RequestMapping(value="/admin_chk", method = RequestMethod.POST)
-		@ResponseBody
-		public AdminVO admin_loginChk(HttpSession session, HttpServletResponse res, @RequestParam Map<String, String> map ) throws IOException {
+		public @ResponseBody AdminVO admin_loginChk(HttpSession session, HttpServletResponse res, @RequestParam Map<String, String> map ) throws IOException {
 			AdminVO vo  = new AdminVO();
 			
 			vo.setAdmin_id(map.get("id"));
 			vo.setAdmin_pw(map.get("pw"));
 			
 			AdminVO rst =null;
-			
-			try {
-				rst = sqlSession.selectOne("adminMapper.selectAdmin", vo);
-				System.out.println("--------------"+ rst);
+			//데이터값 조회 
+			rst = sqlSession.selectOne("adminMapper.selectAdmin", vo);
+			if(rst != null){
 				session.setAttribute("admin_seesion", vo.getAdmin_id());
 				Object ss = session.getAttribute("admin_seesion");
-				System.out.println("--------------"+ ss);
-				
+				System.out.println("------  session --------"+ ss);
 				return rst;
-			} catch (Exception e) {
-				// TODO: handle exception
-				System.out.println("--------------"+ rst);
-				return rst;
+			}else{
+				Object ss = session.getAttribute("admin_seesion");
+				System.out.println("------  session 없어야 --------"+ ss);
+				return null;
 			}
-			
 			
 		}
 }

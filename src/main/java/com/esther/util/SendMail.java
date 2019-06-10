@@ -8,7 +8,7 @@ import com.esther.model.ReservationVO;
 import java.util.Properties;
 	public class SendMail {
 	    
-	    public  String sendmail(ReservationVO vo){
+	    public  int  sendmail(ReservationVO vo){
 	    	final String username="webtask365";
 	    	final String password="qwer123!@";
 	    	
@@ -36,7 +36,7 @@ import java.util.Properties;
 	        try{
 	            Message message = new MimeMessage(session); 
 	            message.setFrom(new InternetAddress("webtask365@gmail.com", "웹태스크365 고객서비스 "));
-	            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(vo.getReserv_email())); 
+	        	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(vo.getReserv_email())); 
 	            message.setSubject("Morock booking confirmation ");
 	            message.setText("Dear,"   
 	       //     message.setContent("Dear, customer"
@@ -52,11 +52,15 @@ import java.util.Properties;
 	            Transport.send(message); 
 	            System.out.println("SEND");
 	            
+	            return 1;
 	        } catch(Exception e){
 	        	e.printStackTrace();
-	        	return "예약확인 이메일 전송 실패 ";
+	        	return 0;
 	        }
-			return "예약확인 이메일 전송";
+//	        }catch(Exception e){
+//	        	e.printStackTrace();
+//	        	return 0;
+//	        }
 	    }    
 	    
 	}
