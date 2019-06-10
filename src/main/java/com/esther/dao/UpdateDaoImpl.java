@@ -18,8 +18,7 @@ public class UpdateDaoImpl implements UpdateDao{
 
 	@Override
 	public int updateOne(ReservationVO vo) throws Exception {
-		System.out.println("**********"+sqlSession.update(Namespace+".updateOne"));
-		return sqlSession.update(Namespace+".updateOne");
+		return sqlSession.update(Namespace+".updateOne", vo);
 	}
 	
 	

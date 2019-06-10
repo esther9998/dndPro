@@ -26,14 +26,11 @@ import com.esther.service.UpdateService;
 		@ResponseBody
 		@RequestMapping(value = "/updateStatus", method = RequestMethod.POST)
 		public int updateStatus(@RequestBody Map data,HttpServletRequest httpRequest){
-			System.out.println("어드민  컨트롤에서 출력"+data);
 			ReservationVO vo = new ReservationVO();
 			String convertIdx  = (String) data.get("idx");
 			String convertVal  = (String) data.get("val");
-			System.out.println(convertIdx+ "...."+convertVal);
 			int updateIdx = Integer.parseInt(convertIdx.trim());
 			int updateVal = Integer.parseInt(convertVal.trim());
-			System.out.println(updateIdx+ "...."+updateVal);
 			vo.setReserv_idx(updateIdx);
 			vo.setReserv_status(updateVal);
 			

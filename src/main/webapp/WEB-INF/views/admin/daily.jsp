@@ -23,7 +23,10 @@
 					<!-- 예약 상태 -->
 					<c:if test="${daily.reserv_date  eq  todayDate}">
 						<div class="event_item" >
-						<div class="ei_Dot dot_active"></div>
+						<div <c:if test="${daily.reserv_status =='0'}"> class="ei_Dot  dot_active" </c:if>
+						<c:if test="${daily.reserv_status =='1'}"> class="ei_Dot  dot_attend" </c:if>
+						<c:if test="${daily.reserv_status =='2'}"> class="ei_Dot dot_cancel" </c:if>
+						 <c:if test="${daily.reserv_status =='3'}"> class="ei_Dot  dot_noShow" </c:if>></div>
 						<select style="margin-top: 20px;" name="${daily.reserv_idx}" id="select_status">
 							<option value="0" <c:if test="${daily.reserv_status =='0'}"> selected </c:if>>예약 <option>
 							<option value="1" <c:if test="${daily.reserv_status =='1'}"> selected </c:if>>완료</option>
@@ -50,7 +53,6 @@
     var val ="";
     idx = $( this ).attr('name') ;
    	val = $("select[name="+idx+"]").val();
-    alert(val+"ssssss"+ idx);
     var data = {val : val, idx: idx }
     changeStatus(data);    	  
   });
@@ -63,7 +65,7 @@
 							dataType: 'json',
 							data:  JSON.stringify(data),
 							success :function(rst){
-								alert("변경되었습니다.  "+rst);
+								alert("변경되었습니다.  ");
 								location.reload();
 								},
 							error:function(xhr, status,error){
