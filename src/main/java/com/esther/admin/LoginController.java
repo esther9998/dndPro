@@ -1,6 +1,7 @@
 package com.esther.admin;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,12 +20,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.esther.model.AdminVO;
+import com.esther.model.ReservationVO;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
+	
+	//캘린더 임시 페이지
+			@RequestMapping(value="/admin/temp")
+			public ModelAndView tempCal(ReservationVO  vo, HttpSession session, HttpServletResponse res, @RequestParam Map<String, String> map ) throws IOException {
+				ModelAndView mav = new ModelAndView();
+					mav.setViewName("/calendar/themes");
+					List<ReservationVO> rstVo = new ArrayList<>();
+					rstVo = sqlSession.selectList("reservationMapper.selectAll", vo);
+					
+					mav.addObject("reserveList", rstVo);
+					return mav;
+				
+			}
 	
 		//로그인 페이지
 		@RequestMapping(value="/admin/loginPage")

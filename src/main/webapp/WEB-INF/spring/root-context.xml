@@ -19,9 +19,9 @@
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         
  <!-- 로컬에서 사 -->
-<property name="url"  value="jdbc:mysql://dndex.cafe24.com:3306/dndex?useSSL=false&amp;serverTimezone=Asia/Seoul"></property>  
+ <property name="url"  value="jdbc:mysql://dndex.cafe24.com:3306/dndex?useSSL=false&amp;serverTimezone=Asia/Seoul"></property>  
 <!-- 디비올릴때 -->
-<!-- <property name="url"  value="jdbc:mysql://localhost:3306/dndex?useSSL=false&amp;serverTimezone=UTC"></property>-->
+<!--  <property name="url"  value="jdbc:mysql://localhost:3306/dndex?useSSL=false&amp;serverTimezone=Asia/Seoul"></property> -->
 
         <property name="username" value="dndex"></property>
         <property name="password" value="sther84!"></property>  

@@ -12,7 +12,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-142049049-1');
 </script>
 	
@@ -23,10 +22,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-W4NTLM4');</script>
 <!-- End Google Tag Manager -->
 
-	<jsp:include page="../components/head.jsp"></jsp:include>
-	
-
+<jsp:include page="../components/head.jsp"></jsp:include>
 </head>
+
+
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4NTLM4"
